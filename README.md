@@ -1,2 +1,2 @@
 # hotel_reservation_backend
-Demo rest api using go fiber.
+Demo rest api using go & fiber.
