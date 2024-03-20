@@ -47,7 +47,7 @@ func (h *UserHandler) HandleDeleteUser(c *fiber.Ctx) error {
 	if err != nil {
 		return nil
 	}
-	return c.JSON(map[string]string{"msg": fmt.Sprintf("deleted id: %d", id)})
+	return c.JSON(map[string]string{"msg": fmt.Sprintf("deleted id: %", id)})
 }
 func (h *UserHandler) HandleGetUser(c *fiber.Ctx) error {
 	id := c.Params("id")

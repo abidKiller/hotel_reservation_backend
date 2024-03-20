@@ -48,7 +48,6 @@ type User struct {
 }
 
 func (p *CreateUserParams) Validate() error {
-	fmt.Printf("%+v", p)
 	if len(p.FirstName) < minFirstNameLen {
 		return fmt.Errorf("minimum firstName length should be %d", minFirstNameLen)
 	}
