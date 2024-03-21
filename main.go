@@ -7,6 +7,7 @@ import (
 
 	"github.com/abidkiller/hotel_reservation_backend/api"
 	"github.com/abidkiller/hotel_reservation_backend/db"
+	"github.com/abidkiller/hotel_reservation_backend/middleware"
 	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -36,7 +37,7 @@ func main() {
 
 		app = fiber.New(config)
 
-		apiv1 = app.Group("/api/v1")
+		apiv1 = app.Group("/api/v1", middleware.JWTAuthentication)
 	)
 	//user handlers
 	apiv1.Post("/user", userHanlder.HandleCreateUser)
