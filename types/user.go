@@ -68,6 +68,10 @@ func ValidateEmail(email string) bool {
 	return emailRegex.MatchString(email)
 }
 
+func IsValiadPasswor(encrypedPw, pw string) bool {
+	return bcrypt.CompareHashAndPassword([]byte(encrypedPw), []byte(pw)) == nil
+}
+
 func ValidatePassword(password string) error {
 	minLength := 8
 	uppercaseRegex := `[A-Z]+`

@@ -1,6 +1,8 @@
 package api
 
 import (
+	"fmt"
+
 	"github.com/abidkiller/hotel_reservation_backend/db"
 	"github.com/abidkiller/hotel_reservation_backend/types"
 	"github.com/gofiber/fiber/v2"
@@ -83,6 +85,9 @@ func (h *HotelHandler) HandleGetRooms(c *fiber.Ctx) error {
 
 func (h *HotelHandler) HandleGetHotel(c *fiber.Ctx) error {
 	id := c.Params("id")
+
+	fmt.Println(c.Context().Value("user").(types.User))
+
 	oid, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return err
